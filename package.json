@@ -1,0 +1,32 @@
+{
+  "name": "xjconst",
+  "version": "1.0.0",
+  "description": "xjconst is cli based url shortener works through xjconst api made in nodejs by @anishh.arc user in instagram",
+  "main": "bin/index.js",
+  "bin": {
+    "xjconst": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "url",
+    "shortener"
+  ],
+  "author": "anish sh",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "chalk": "^4.1.0",
+    "user": "0.0.0",
+    "yargs": "^16.0.3"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:arc22-dev/xjconst.git"
+  }
+}
