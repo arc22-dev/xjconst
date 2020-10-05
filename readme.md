@@ -75,4 +75,6 @@ xjconst -n . -s 5
 
 ## message
 
-everyone's suggestions are welcome, this cli is in a demonstrating stage several release will come out shortly with good servers anf features, do follow on instagram as @anishh.arc
+everyone's suggestions are welcome, this cli is in a demonstrating stage several release will come out shortly with good servers anf features, do follow.
+
+*[@anishh.arc](https://instagram.com/anishh.arc) - instagram*
