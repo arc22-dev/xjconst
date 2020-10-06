@@ -7,15 +7,15 @@ this is is simple url shortener nodejs cli made by `@anishh.arc` user in instagr
 ## installation
 
 ```
-npm install xjconst
+npm install -g xjconst
 ```
 or in short
 ```
-npm i xjconst
-```
-or globally
-```
 npm i -g xjconst
+```
+or uninstall
+```
+npm uninstall -g xjconst
 ```
 
 ## usage
@@ -37,8 +37,11 @@ alternatively you can use `--name` for `-n` , `--create` for `-c` and `--search`
 use while shortening url with `-c` or `--create` if needed for expirations
 
 `-d` or `--day` and numeric days example `-d 1` for 1 day
+
 `-h` or `--hour` and numeric hour example `-h 1` for 1 hour
+
 `-m` or `--minute` and numeric minute example `-m 1` for 1 minute
+
 `-u` or `--user` and numeric users allowed example `-u 11` for 11 users
 
 ### examples
