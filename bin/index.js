@@ -34,13 +34,23 @@ if (options.search) {
                 console.log(chalk`{red ${res.data.message}}`);
             } else {
                 // console.log(res.data)
-                for (const obj of res.data) {
-                    // console.log(obj)
-                    for (key in obj) {
-                        console.log(chalk`{bold ${key}} : {green ${obj[key]}}`)
-                    }
+                // for (const obj of res.data) {
+                //     // console.log(obj)
+                //     for (key in obj) {
+                //         console.log(chalk`{bold ${key}} : {green ${obj[key]}}`)
+                //     }
 
-                    console.log(`\r\n`)
+                //     console.log(`\r\n`)
+                // }
+
+                // new print method with old way
+
+                for (let i = 0; i <= (res.data.length - 1); i++) {
+                    console.log(chalk`{bold [{magenta ${res.data[i].id}}]} {underline https://xjconst02.cf/{bold.green ${res.data[i].short}}} redirects to {cyan.underline ${res.data[i].url}}
+                    users allowed {bold.yellow ${res.data[i].users_allowed}}
+                    total visits {bold.yellow ${res.data[i].visited}}
+                    created at {bold.yellow ${res.data[i].created_at}}
+                    expires on {bold.yellow ${res.data[i].expire_date}}\r\n`)
                 }
             }
         });
@@ -57,8 +67,8 @@ if (options.create) {
         longurl: options.create
     }
 
-    var minutes = null;
-    var users = null;
+    var minutes = 0;
+    var users = 0;
 
     if (options.day) {
         minutes = minutes + (options.day * 24 * 60)
@@ -70,20 +80,28 @@ if (options.create) {
         minutes = minutes + (options.minute)
     }
 
-    if (options.user) {
-        postdata.allowed = options.user
-    } else {
-        postdata.allowed = users
+    if (minutes <= 0) {
+        minutes = -1
     }
+
+    if (options.user) {
+        users = options.user
+    } else {
+        users = -1
+    }
+
     postdata.expire = minutes;
+    postdata.allowed = users;
 
     axios.post(url, postdata)
         .then(res => {
             if (res.data.status === false) {
                 console.log(chalk`{red ${res.data.message}}`);
+            } else if (res.data.status === true) {
+                console.log(chalk`your new {bold short url} is {green.underline ${res.data.shorturl}} which {bold expires on} {cyan ${res.data.expires}} date and {bold allowed to} {magenta ${res.data.allowed}} users`)
+                //console.log(postdata)
             } else {
-                console.log(chalk`your new {bold short url} is {green ${res.data}}`)
-                // console.log(postdata)
+                console.log(chalk`{red something went wrong}`)
             }
         });
 }

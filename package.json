@@ -1,6 +1,6 @@
 {
   "name": "xjconst",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "xjconst is cli based url shortener works through xjconst api made in nodejs by @anishh.arc user in instagram",
   "main": "bin/index.js",
   "bin": {
